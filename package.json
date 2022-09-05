@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/michaelclancy90/Tech-Blog#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.20.0",
     "connect-session-sequelize": "^7.1.5",
     "dotenv": "^16.0.2",
