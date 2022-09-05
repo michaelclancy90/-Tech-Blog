@@ -1,6 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+class Blogger extends Model {}
+
 Blogger.init(
   {
     id: {
@@ -25,3 +27,5 @@ Blogger.init(
     modelName: 'blogger',
   }
 );
+
+module.exports = Blogger;

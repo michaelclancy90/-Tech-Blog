@@ -4,9 +4,9 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const path = require('path');
 const hbs = require('express-handlebars').create({});
-const { _SESSION_SECRET, _NODE_ENV } = require('./config/config');
+const { _SESSION_SECRET } = require('./config/config');
 const sequalize = require('./config/connection');
-const controllers = require('./controllers');
+const router = require('./controller');
 
 const app = express();
 
@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 const PORT = process.env.PORT || 3001;
 
-app.use(controllers);
+app.use(router);
 
 sequalize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
