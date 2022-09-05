@@ -19,12 +19,12 @@ const con = mysql.createConnection({
   port: _DB_PORT,
 });
 const databaseName = _DB_NAME;
-con1.connect((err) => {
+con.connect((err) => {
   if (err) throw err;
-  con1.query(`DROP DATABASE IF EXISTS ${databaseName}`, (err2) => {
+  con.query(`DROP DATABASE IF EXISTS ${databaseName}`, (err2) => {
     if (err2) throw err2;
   });
-  con1.end();
+  con.end();
   console.log('DROPPED DATABASE');
 });
 
